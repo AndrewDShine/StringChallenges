@@ -3,15 +3,14 @@ public class StringChallenges
 	{
 
 		static Scanner userInput = new Scanner(System.in);
-		static boolean repeat = true;
 		public static void main(String[] args)
 			{
 				// TODO Auto-generated method stub
 				Scanner userIntPut = new Scanner(System.in);
-				
+				boolean repeat = true;
 				do
 					{
-						System.out.println("Please pick a challenge you would like to see! \n "
+						System.out.println("Please pick a challenge you would like to see! \n"
 								+ "1) Use Inside Voice \n"
 								+ "2) Print Vertical text \n"
 								+ "3) Count the Vowels");
@@ -30,9 +29,9 @@ public class StringChallenges
 							default:
 								break;
 						}
-						askToRepeat(repeat);
+						
 					}
-				while(repeat);
+				while(askToRepeat());
 			}
 		public static void useInsideVoice()
 		{
@@ -81,12 +80,20 @@ public class StringChallenges
 					System.out.println("There was "+vowelCounter+" vowel in that text.");
 				}
 		}
-		public static boolean askToRepeat(boolean repeat)
+		public static boolean askToRepeat()
 		{
 			System.out.println("That was fun! Would you like to play again? (yes/no)");
 			String answer = userInput.nextLine();
-			if (answer.contains)
-			return true;
+			answer = answer.toLowerCase();
+			if (answer.contains("yes"))
+				{
+					return true;
+				}
+			else if (answer.contains("no"))
+				{
+					return false;
+				}
+			return false;
 		}
 
 	}
