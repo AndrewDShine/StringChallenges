@@ -7,7 +7,6 @@ public class StringChallenges
 			{
 				// TODO Auto-generated method stub
 				Scanner userIntPut = new Scanner(System.in);
-				boolean repeat = true;
 				do
 					{
 						System.out.println("Please pick a challenge you would like to see! \n"
@@ -65,11 +64,19 @@ public class StringChallenges
 			for (int i = 0; i < textToCount.length(); i++)
 				{
 					String letterToTest = textToCount.substring(i, i + 1);
-					if ((letterToTest.equalsIgnoreCase("a")) || (letterToTest.equalsIgnoreCase("e")) || (letterToTest.equalsIgnoreCase("i")) || (letterToTest.equalsIgnoreCase("o")) || (letterToTest.equalsIgnoreCase("u")))
-						{
+					letterToTest = letterToTest.toLowerCase();
+					switch (letterToTest)
+					{
+						case "a":
+						case "e":
+						case "i":
+						case "o":
+						case "u":
 							vowelCounter = vowelCounter + 1;
-							//System.out.println(textToCount.substring(i, i+1));
-						}
+							break;
+						default:
+							break;
+					}
 				}
 			if(vowelCounter != 1)
 				{
